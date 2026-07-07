@@ -66,3 +66,4 @@
 /Users/soysergiogonza/workspace/study/todo-app/back/TodoApi/obj/Debug/net10.0/TodoApi.pdb
 /Users/soysergiogonza/workspace/study/todo-app/back/TodoApi/obj/Debug/net10.0/TodoApi.genruntimeconfig.cache
 /Users/soysergiogonza/workspace/study/todo-app/back/TodoApi/obj/Debug/net10.0/ref/TodoApi.dll
+/Users/soysergiogonza/workspace/study/todo-app/back/TodoApi/obj/Debug/net10.0/TodoApi.sourcelink.json
