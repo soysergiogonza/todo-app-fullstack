@@ -7,3 +7,8 @@ public class TaskItem
     public bool Completed { get; set; }
     public DateTime CreatedAt { get; set; }
 }
+
+public class ToggleTaskRequest
+{
+    public int Id { get; set; }
+}

@@ -21,5 +21,23 @@ public class TasksController : ControllerBase
         var tasks = await _taskRepository.GetAllAsync();
         return Ok(tasks);
     }
+
+    [HttpPost]
+    public async Task<ActionResult<TaskItem>> Create([FromBody] CreateTaskRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.Title))
+            return BadRequest("El título no puede estar vacío.");
+
+        var task = await _taskRepository.CreateAsync(request.Title);
+        return CreatedAtAction(nameof(GetAll), new { id = task.Id }, task);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult<TaskItem>> ToggleComplete(int id)
+    {
+        var task = await _taskRepository.UpdateAsync(id);
+        if(task is null) return NotFound();
+        return Ok(task);
+    }
 }
 

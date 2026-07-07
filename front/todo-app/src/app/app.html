@@ -1,3 +1,15 @@
 @for (task of tasks(); track task.id) {
 <p>{{ task.title }}</p>
+<!-- <button (click)="updateStatusTask(task.id)">
+    <span>Status: {{task.completed === true ? 'Completada' : 'Pendiente'}}</span>
+</button> -->
+<li>
+    <input type="checkbox" [checked]="task.completed" (change)="updateStatusTask(task.id)" />
+    {{ task.title }}
+</li>
 }
+
+<form [formGroup]="taskForm">
+    <input type="text" formControlName="newTaskTitle">
+    <button type="submit" (click)="onSubmit()">Crear tarea</button>
+</form>
